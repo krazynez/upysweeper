@@ -7,7 +7,7 @@
 
 ## Setup & Install
 
-1. Make sure you have `pyserial` installed.
+1. Make sure you have `pyserial` and `pycryptodome` installed.
 
     1. `pip install -r requirements.txt`
 
