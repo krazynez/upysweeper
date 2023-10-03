@@ -34,5 +34,5 @@
 ### Original work
 
 <ul>
-<li><a href=https://github.com/khubik2/pysweeper">khubik2's pysweeper repo</p></li>
+<li><a href="https://github.com/khubik2/pysweeper">khubik2's pysweeper repo</p></li>
 </ul>
