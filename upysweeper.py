@@ -101,14 +101,25 @@ def startsv():
     global storedsl
     parser = argparse.ArgumentParser(description='Options to supply µpysweeper')
     parser.add_argument('-p', '--port', help='Serial port', required=True, nargs=1)
-    parser.add_argument('-bt', '--battery-type', help='Type of Battery to emulate', choices=['FFFFFFFF', 'Autoboot','Normal'], default='FFFFFFFF')
-    args = parser.parse_args()
-    hexstr = ''.join(args.battery_type)
-    if hexstr == 'Autoboot':
+    parser.add_argument('-bt', '--battery-type', help='Type of Battery to emulate', choices=['Service', 'Autoboot','Normal', 'Custom'], default='Serivce')
+    args, ukn = parser.parse_known_args()
+    if args.battery_type == 'Custom':
+        if ukn:
+            custom_battery_type = ukn[0]
+            if custom_battery_type[0] == '0' and custom_battery_type[1].lower() == 'x':
+                custom_battery_type = custom_battery_type[2:]
+            if len(custom_battery_type) < 8 or len(custom_battery_type) > 8:
+                print("\nLooks like you are not sure what to do so we will just be using service mode for the battery type\n")
+                custom_battery_type = 'FFFFFFFF'
+    hexstr = ''.join(args.battery_type).lower()
+    if hexstr == 'autoboot':
         hexstr = '00000000'
-    elif hexstr == 'Normal':
+    elif hexstr == 'normal':
         hexstr = '34127856'
-
+    elif hexstr == 'service':
+        hexstr = 'FFFFFFFF'
+    elif hexstr == 'custom':
+        hexstr = custom_battery_type
     if args.port is not None:
         portsel = ''.join(args.port) #"/dev/ttyUSB0"
     else:
