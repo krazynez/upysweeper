@@ -111,7 +111,7 @@ def startsv():
             if len(custom_battery_type) < 8 or len(custom_battery_type) > 8:
                 print("\nLooks like you are not sure what to do so we will just be using service mode for the battery type\n")
                 custom_battery_type = 'FFFFFFFF'
-    hexstr = ''.join(args.battery_type).lower()
+    hexstr = args.battery_type.lower()
     if hexstr == 'autoboot':
         hexstr = '00000000'
     elif hexstr == 'normal':
@@ -120,8 +120,10 @@ def startsv():
         hexstr = 'FFFFFFFF'
     elif hexstr == 'custom':
         hexstr = custom_battery_type
+    else:
+        hexstr = 'FFFFFFFF'
     if args.port is not None:
-        portsel = ''.join(args.port) #"/dev/ttyUSB0"
+        portsel = args.port[0] #"/dev/ttyUSB0"
     else:
         stopsv()
         return
@@ -138,7 +140,6 @@ def startsv():
         print("No port echo detected. Double check your assembly.")
         stopsv()
         return
-       
     t = threading.Thread(target=emuloop, args=(portsel, serialn))
     t.start()
 
@@ -352,5 +353,5 @@ def MatrixSwap(key):
 
     
 if __name__ == '__main__':
- startsv()
+    startsv()
 
