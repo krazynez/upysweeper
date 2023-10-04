@@ -1,9 +1,11 @@
 ## µpysweeper
 
-<p>pysweeper without a GUI</p>
+<p style="text-decoration: underline;">pysweeper without a GUI</p>
 
 
+<p><b>Note:</b> If the serial output dumps to screen and you get a green light then no light just turn your PSP over and with the power cable still plugged in turn on the PSP. It should autoboot into Despertar del Cementerio</p>
 
+<br>
 
 ## Setup & Install
 
@@ -22,7 +24,7 @@
 
 
 ##### Battery types
- - Default Battery type is service mode `0xFFFFFFFF`
+ - "Service" which is `0xFFFFFFFF` and set as default
 
  - "Autoboot" which is `0x00000000`
 
