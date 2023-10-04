@@ -124,6 +124,7 @@ def startsv():
         hexstr = 'FFFFFFFF'
     if args.port is not None:
         portsel = args.port[0] #"/dev/ttyUSB0"
+        storedsl = portsel
     else:
         stopsv()
         return
@@ -152,7 +153,8 @@ def updatecom():
     portlist = list()
     for port in serial.tools.list_ports.comports():
         portlist.append(port.device)
-    portsel = portlist[0]
+    if len(portlist) > 0:
+        portsel = portlist[0]
 
 def openport(pname):
     try:
@@ -279,6 +281,7 @@ def emuloop(pname, sn):
             print("Port disconnected. Retrying in 2 seconds.")
             time.sleep(2)
             updatecom()
+            newname = '/dev/' + os.path.basename(os.readlink(storedsl))
             emuloop(newname, sn)
         else:
             print("Service stopped, COM port closed.")
