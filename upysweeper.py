@@ -281,8 +281,11 @@ def emuloop(pname, sn):
             print("Port disconnected. Retrying in 2 seconds.")
             time.sleep(2)
             updatecom()
-            newname = '/dev/' + os.path.basename(os.readlink(storedsl))
-            emuloop(newname, sn)
+            try:
+                newname = '/dev/' + os.path.basename(os.readlink(storedsl))
+                emuloop(newname, sn)
+            except:
+                stopsv()
         else:
             print("Service stopped, COM port closed.")
             return
