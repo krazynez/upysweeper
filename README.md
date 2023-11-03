@@ -3,6 +3,10 @@
 <p style="text-decoration: underline;">pysweeper without a GUI</p>
 
 
+[upysweeper.webm](https://github.com/krazynez/upysweeper/assets/39999447/4c89660e-a884-4c87-b0d7-9eb16161cb8d)
+
+
+
 <p><b>Note:</b> If the serial output dumps to screen and you get a green light then no light just turn your PSP over and with the power cable still plugged in turn on the PSP. It should autoboot into Despertar del Cementerio</p>
 
 <br>
@@ -30,7 +34,13 @@
 
  - "Normal" which is `0x34127856` (just random)
 
- - "Custom" `0x12345678` or `12345678`  allow custom serial to be used 
+ - "Custom" `0x12345678` or `12345678`  allow custom serial to be used
+
+##### Embedded flag
+
+* `-e` if defined will just be set to true
+
+* This is to tell upysweeper to not run a test for an echo it has been only tested on the Milk-V Duo with a custom image.
 
 
 ### Original work
