@@ -83,7 +83,9 @@ ser = serial.Serial()
 running = False;
 storedsl = ''
        
-def test_serial_port(portsel):
+def test_serial_port(portsel, args):
+    if args.embedded is True:
+        return True
     ser = serial.Serial(port=portsel, baudrate=19200, bytesize=8, parity=serial.PARITY_EVEN, timeout=1, stopbits=serial.STOPBITS_TWO)
     ser.reset_input_buffer()
     ser.reset_output_buffer()
@@ -102,6 +104,7 @@ def startsv():
     parser = argparse.ArgumentParser(description='Options to supply µpysweeper')
     parser.add_argument('-p', '--port', help='Serial port', required=True, nargs=1)
     parser.add_argument('-bt', '--battery-type', help='Type of Battery to emulate', choices=['Service', 'Autoboot','Normal', 'Custom'], default='Serivce')
+    parser.add_argument('-e', '--embedded', help='Used for embedded devices', action="store_true")
     args, ukn = parser.parse_known_args()
     if args.battery_type == 'Custom':
         if ukn:
@@ -137,7 +140,7 @@ def startsv():
     running = True
     # spastic code
     # Spastic code 2: test if port is valid, close it, run emulation loop
-    if not test_serial_port(portsel):
+    if not test_serial_port(portsel, args):
         print("No port echo detected. Double check your assembly.")
         stopsv()
         return
