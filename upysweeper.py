@@ -1,15 +1,11 @@
 #!/usr/bin/python3
-
-# You need to install these packages:
-# tk, pycryptodome, pyserial
-
-# If you're on Linux, you need to run this script as a user with serial port access permission.
-
+##################################
 # Update : µpysweeper
 # Author : krazynez
-# Date   : September 29, 2023
-# Version: 0.1
-# headless version of pysweeper ( still requires PC for now ;-) )
+# Date   : November 09, 2023
+# Version: 1.0
+# headless version of pysweeper
+##################################
 
 from Crypto.Cipher import AES 
 import serial

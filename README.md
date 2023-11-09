@@ -42,6 +42,8 @@
 
 * This is to tell upysweeper to not run a test for an echo it has been only tested on the Milk-V Duo with a custom image.
 
+* PINS GP2 (RX) GP3 (TX) and the default pins to use.
+
 
 ### Original work
 
