@@ -42,7 +42,12 @@
 
 * This is to tell upysweeper to not run a test for an echo it has been only tested on the Milk-V Duo with a custom image.
 
-* PINS GP2 (RX) GP3 (TX) and the default pins to use.
+* PIN GP2 (RX) _schematic(PIN 5)_ 
+
+* PIN GP3 (TX) _schematic (PIN 4)_
+
+
+![img](https://milkv.io/assets/images/pinout-c46d0577677fbfe3695fde269cbc37ac.webp)
 
 
 ### Original work
