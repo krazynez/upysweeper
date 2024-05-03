@@ -31,9 +31,8 @@ challenge1_secret = {
     0x97: "AF6010A846F741F3",
     0xB3: "DBD3AEA4DB046410",
     0xD9: "90E1F0C00178E3FF",
-    0xEB: "0BD9027E851FA123"}
-
-	}
+    0xEB: "0BD9027E851FA123"
+}
 challenge2_secret = {
     0x00: "F5D7D4B575F08E4E",
     0x01: "CC699581FD89126C",
