@@ -46,9 +46,13 @@
 
 * PIN GP3 (TX) _schematic (PIN 4)_
 
+<b>Milk-V DUO</b>
 
-![img](https://milkv.io/assets/images/pinout-c46d0577677fbfe3695fde269cbc37ac.webp)
+<img src=".schemas/milkv_upysweeper_v1.3.svg" width="300"></img>
 
+<b>LincheeRV Nano</b>
+
+<img src=".schemas/LicheeRV_Nano.svg" width="300"></img>
 
 ### Original work
 
