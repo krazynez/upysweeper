@@ -49,6 +49,7 @@
 <b>Milk-V DUO</b>
 
 <img src=".schemas/milkv_upysweeper_v1.3.svg" width="300"></img>
+<img src=".schemas/milk-v-duo-layout.png" width="300"></img>
 
 <b>LincheeRV Nano</b>
 
